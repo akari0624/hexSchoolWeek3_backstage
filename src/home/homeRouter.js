@@ -5,15 +5,16 @@ import GrossDataCardsArea from './components/GrossDataCardsArea'
 import ActiveChartArea from './components/ActiveChartArea'
 import TransactionWebsiteArea from './components/TransactionWebsiteArea';
 import LatestOrdersArea from './components/LatestOrdersArea';
+
 const OuttestWrapper = Styled.div`
-  display:relative;
+  position:relative;
   background-color:#F2F2F2;
 `
 
 const BottomTwoHorizontalAreaSection = Styled.section`
   display:flex;
   flex-direction:row;
-  margin:${props => props.theme.level1Margin};
+  margin:42px 30px 0px 30px;
   justify-content:space-between;
   @media (max-width:${props => props.theme.mobileOneColumnWidth}){
     flex-direction:column;
@@ -21,7 +22,7 @@ const BottomTwoHorizontalAreaSection = Styled.section`
 `
 
 
-export default(props) => {
+const HomeIndexRouter = (props) => {
 
   return (
     <OuttestWrapper>
@@ -37,3 +38,5 @@ export default(props) => {
   )
 
 }
+
+export default HomeIndexRouter

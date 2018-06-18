@@ -6,7 +6,11 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import {ThemeProvider} from 'styled-components'
 import reducers from './reducers'
 
-import HomeRouter from './home/homeRouter'
+import HeaderNav from './headers'
+import HomeIndexRouter from './home/homeRouter'
+import OrdersIndexRouter from './orders'
+import ProductIndexRouter from './product'
+
 
 const createStoreWithMiddleware = applyMiddleware()(createStore)
 
@@ -24,8 +28,11 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <div>
+          <HeaderNav />
           <Switch>
-            <Route path="/" component={HomeRouter}/>
+            <Route path="/orders" component={OrdersIndexRouter} />
+            <Route path="/product" component={ProductIndexRouter} />
+            <Route path="/" component={HomeIndexRouter} />
           </Switch>
         </div>
       </BrowserRouter>

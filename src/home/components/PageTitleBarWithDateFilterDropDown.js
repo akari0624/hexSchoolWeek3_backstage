@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 const Wrapper = Styled.div`
   display:flex;
-  margin:${props => props.theme.level1Margin};
+  margin:0px 30px 42px 30px;
   justify-content:space-between;
   flex-direction:row;
 `
