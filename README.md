@@ -2,7 +2,7 @@
 
 
 ### DEMO page
-- [on github page](https://github.com/akari0624/hexSchoolWeek3_backstage)
+- [on github page]()
 
 ### 本週相關資訊
 - [主辦單位提供的參考設計稿](https://hexschool.github.io/THE_F2E_Design/week3-admin%20order/)
@@ -16,7 +16,6 @@
 
 
 ### 值得一提的使用到的第三方Library
-  - css solution: Styled-Components
   - chart - D3
 
 ### note
