@@ -34,8 +34,9 @@ const LineChartToolTipDiv = Styled.div`
   display:none;
   position:absolute;
   transform:translate(200px,250px);
-  width:90px;
-  height:50px;
+  width:140px;
+  height:100px;
+  padding:0px 5px 0px 5px;
   background-color:#FFFFFF;
   border:1px solid #000000;
 
@@ -171,7 +172,11 @@ const drawInitLineChart = (svgRef, data, tooltipRef) => {
   
   const tooltipDom = select(tooltipRef)
   
-  const lineGWrapper = select(svgRef).append('g')
+  const SVGRoot = select(svgRef)
+  const lineGWrapper = SVGRoot.append('g')
+
+  lineGWrapper.style('transform','translate(50px,0)')
+  lineGWrapper.attr('class','wholeGWrapper')
 
   const tootipLine = lineGWrapper.append('line')
   
@@ -179,15 +184,15 @@ const drawInitLineChart = (svgRef, data, tooltipRef) => {
 
 
   const drawTooltip = () => {
-    const XandYArr = mouse(svgRef)
 
-    const currDateThatMousePoint = xFunc.invert(mouse(lineGWrapper.node())[0])
+    const XandYArr = mouse(lineGWrapper.node())
+   
+    const currDateThatMousePoint = xFunc.invert(XandYArr[0])
     const currDateString = parseDateToString(currDateThatMousePoint)
     //  console.log(currDateString, currDateString instanceof String)  // why instanceof String return false ????
 
     const dataArrSizeThree = filterDataArrFunc(currDateString)
      
-    console.log(dataArrSizeThree)
 
     tootipLine
       .attr('stroke','black')
@@ -202,10 +207,12 @@ const drawInitLineChart = (svgRef, data, tooltipRef) => {
     ).style(
       'display','block'
     ).style(
-      'transform',`translate(${XandYArr[0]+30}px,${XandYArr[1]-20}px)`
+      'transform',`translate(${XandYArr[0]+80}px,${XandYArr[1]-20}px)`
     ).html(
-      `<div style="color:red;">cost: ${dataArrSizeThree[0].value}</div>
+      `
+      <div>${currDateString}</div>
       <div style="color:green;">income: ${dataArrSizeThree[1].value}</div>
+      <div style="color:red;">cost: ${dataArrSizeThree[0].value}</div>
       <div style="color:steelblue;">revenue: ${dataArrSizeThree[2].value}</div>
       `
     )
@@ -213,6 +220,7 @@ const drawInitLineChart = (svgRef, data, tooltipRef) => {
 
 
   const removeTooltip = () => {
+ 
     tooltipDom.style(
       'opacity','0'
     ).style(
@@ -232,8 +240,11 @@ const drawInitLineChart = (svgRef, data, tooltipRef) => {
     .select('.domain')
     .remove()
 
-  lineGWrapper.append('g')
-    .call(axisLeft(yFunc))
+  const axisOnLeft = lineGWrapper.append('g')
+    .style('transform', 'translateX(-15px)')
+    .call(axisLeft(yFunc).ticks(5))
+
+  axisOnLeft
     .append('text')
     .attr('fill', '#000')
     .attr('transform', 'rotate(-90)')
