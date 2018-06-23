@@ -18,16 +18,19 @@ const Wrapper = Styled.section `
 
 const data = [{
   kind:'TOTAL REVENUE',
+  className:'fas fa-hand-holding-usd',
   numStr:'54,540',
   color:'#7ED321',
 },
 {
   kind:'TOTAL COST',
+  className:'fas fa-boxes',
   numStr:'54,540',
   color:'#7ED321',
 },
 {
   kind:'NET INCOME',
+  className:'fas fa-money-bill',
   numStr:'54,540',
   color:'#7ED321',
 }]
@@ -35,7 +38,7 @@ const data = [{
 const renderGrossDataCard = (dataArr) => {
 
   return (dataArr.map(d => (<GrossDataCard key={d.kind}
-    renderCardTitle={() => (d.kind)}
+    renderCardTitle={() => (<div><i className={`${d.className}`}></i>{d.kind}</div>)}
     renderCardContent={() => (d.numStr)}
     contentTextColor = {d.color} /> ))
   )

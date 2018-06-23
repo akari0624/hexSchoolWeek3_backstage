@@ -29,16 +29,16 @@ const GrossDataCard = props => {
 
   return (
 
-  <CardWrapper>
-    <CardTitle>
-      {props.renderCardTitle()}
-    </CardTitle>
-    <CardContent contentTextColor={props.contentTextColor}>
-      {props.renderCardContent()}
-    </CardContent>
-  </CardWrapper>
+    <CardWrapper>
+      <CardTitle>
+        {props.renderCardTitle()}
+      </CardTitle>
+      <CardContent contentTextColor={props.contentTextColor}>
+        {props.renderCardContent()}
+      </CardContent>
+    </CardWrapper>
 
-)}
+  )}
 
 
 GrossDataCard.propTypes = {
