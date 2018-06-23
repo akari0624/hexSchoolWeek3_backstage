@@ -2,7 +2,9 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: ['babel-polyfill' ,'./src/index.js'],
+    entry: [
+        'babel-polyfill', './src/index.js'
+    ],
     output: {
         path: __dirname,
         publicPath: '/',
@@ -28,13 +30,26 @@ module.exports = {
                         }
                     }
                 ],
-                test: /\.(css|less)$/
+                test: /\.(less)$/
 
-            }, {
+            },
+            //  {
+            //     use: [
+            //         {
+            //             loader: 'style-loader'
+            //         }, {
+            //             loader: 'css-loader',
+            //         }
+            //     ],
+            //     test: /\.css$/
+
+            // },
+             {
                 use: 'file-loader',
                 test: /\.(png|jpg|gif|mp4|ogg|svg|css|ttf|woff|woff2)$/
 
-            }, {
+            }
+            , {
                 use: 'url-loader?limit=100000',
                 test: /\.(png|jpg|gif|mp4|ogg|svg|css|ttf|woff|woff2)$/
             }
