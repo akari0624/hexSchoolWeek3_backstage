@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack-dev-server --public-host --config ./webpack.config.js --mode development ",
     "clean": "rimraf dist/*",
-    "dist": "npm run clean && webpack --progress --bail --env dist -p",
+    "dist": "npm run clean && webpack  --config ./webpack.dist.config.js --progress --bail --env dist -p",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch",
     "deploy": "npm run dist && gh-pages -d dist"
@@ -48,9 +48,11 @@
     "webpack-dev-server": "^3.1.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
     "axios": "^0.18.0",
     "d3": "^5.5.0",
     "lodash.clonedeep": "^4.5.0",
+    "moment": "^2.22.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-beautiful-dnd": "^7.1.0",
