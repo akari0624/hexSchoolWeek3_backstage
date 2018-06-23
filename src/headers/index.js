@@ -17,6 +17,7 @@ const Wrapper = Styled.nav`
 
 const LeftAppNameBlock = Styled.div`
   width:20%; 
+  padding-left:48px;
 `
 
 const RouterTab = Styled.div`
@@ -24,6 +25,7 @@ const RouterTab = Styled.div`
   display:flex;
   flex-direction:row;
   justify-content:flex-start;
+  margin:0px 10px 0px 10px;
 `
 
 const RouterTabItem = Styled.div`
@@ -32,6 +34,7 @@ const RouterTabItem = Styled.div`
 `
 
 const CurrentLoginAccount = Styled.div`
+padding-right:48px;
 `
 
 

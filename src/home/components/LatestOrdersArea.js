@@ -42,18 +42,21 @@ const lastOrderDataArr = [
     prodName:'fashion sneaker',
     orderTime:'2018-06-12 17:30:31',
     ordererName:'James Brown',
+    totalPrice:3200,
   },
   {
     imageUrl:'https://picsum.photos/100/100/?random',
     prodName:'fashion sneaker',
     orderTime:'2018-06-12 17:30:31',
     ordererName:'James Brown',
+    totalPrice:3200,
   },
   {
     imageUrl:'https://picsum.photos/100/100/?random',
     prodName:'fashion sneaker',
     orderTime:'2018-06-12 17:30:31',
     ordererName:'James Brown',
+    totalPrice:3200,
   },
 
 ]

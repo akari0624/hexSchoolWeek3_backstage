@@ -70,6 +70,23 @@ const OrdererNameString = Styled.div`
   display:inline-block;
 `
 
+const TotalPriceWrapper = Styled.div`
+  float:left;
+`
+
+const TotalPriceTextTag = Styled.div`
+  font-family: HelveticaNeue;
+  font-size: 14px;
+  color: #000000;
+  text-align: right;
+`
+
+const TotalPriceNumber = Styled.div`
+  font-family: HelveticaNeue-Bold;
+  font-size: 20px;
+  color: #000000;
+`
+
 
 
 const LatestOrdersCard = props => (
@@ -90,6 +107,11 @@ const LatestOrdersCard = props => (
         <OrdererNameString>{props.ordererName}</OrdererNameString>
       </OrdererNameWrapper>  
     </ProductInfoOutterWrap>  
+
+    <TotalPriceWrapper>
+      <TotalPriceTextTag>Total</TotalPriceTextTag>
+      <TotalPriceNumber>{props.totalPrice}</TotalPriceNumber>
+    </TotalPriceWrapper>  
   </Wrapper>
 
 )
