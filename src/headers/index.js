@@ -29,8 +29,11 @@ const RouterTab = Styled.div`
 `
 
 const RouterTabItem = Styled.div`
-  margin-right:10px;
-  text-decoration:none;
+  margin-right:20px;
+
+    &:hover{
+      border-bottom:6px solid #FFFFFF;
+    }
 `
 
 const CurrentLoginAccount = Styled.div`
@@ -38,14 +41,30 @@ padding-right:48px;
 `
 
 
+const linkStyleObj = {
+
+  'textDecoration':'none',
+  'color':'#FFFFFF',
+
+}
+
+
+
+const generateLink = (toWhere, showText) => {
+
+
+  return <Link style={linkStyleObj} to={toWhere}> {showText} </Link>
+}
+
+
 const HeaderNav = props => (
 
   <Wrapper>
     <LeftAppNameBlock>Shoptime</LeftAppNameBlock>
     <RouterTab>
-      <RouterTabItem><Link to="/">HOME</Link></RouterTabItem>
-      <RouterTabItem><Link to="/orders">ORDERS</Link></RouterTabItem>
-      <RouterTabItem><Link to="/product">PRODUCT</Link></RouterTabItem>
+      <RouterTabItem>{generateLink('/', 'HOME')}</RouterTabItem>
+      <RouterTabItem>{generateLink('/orders', 'ORDERS')}</RouterTabItem>
+      <RouterTabItem> {generateLink('/product', 'PRODUCT')}</RouterTabItem>
     </RouterTab>
     <CurrentLoginAccount>ADMIN</CurrentLoginAccount>
   </Wrapper>

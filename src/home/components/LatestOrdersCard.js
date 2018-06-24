@@ -6,17 +6,20 @@ import PropTypes from 'prop-types'
 const Wrapper = Styled.div`
   clear:both;
   border-bottom:1px solid #EBEBEB;
+  width:100%;
 `
 
 const ProductImageWrapper = Styled.div`
   float:left;
   display:inline-block;
+  width:100px;
 `
 
 const ProductInfoOutterWrap = Styled.div`
   float:left;
   margin-left:23px;
   display:inline-block;
+  width:calc(100% - 123px - 40% );
 `
 
 
@@ -54,6 +57,7 @@ const OrdererNameWrapper = Styled.div`
   font-size: 16px;
   color: #9B9B9B;
   clear:both;
+ 
 `
 
 const OrdererNameIcon = Styled.div`
@@ -72,6 +76,8 @@ const OrdererNameString = Styled.div`
 
 const TotalPriceWrapper = Styled.div`
   float:left;
+  margin-top:40px;
+  margin-left:20%;
 `
 
 const TotalPriceTextTag = Styled.div`

@@ -114,8 +114,9 @@ const getTheCorrespondingValueOfTheDataArrayByThisDateString = (...arrs) => (dat
 
 const drawInitLineChart = (svgRef, data, tooltipRef) => {
 
-  const svgHeight = 300
-  const svgWidth = 400 
+
+  const svgHeight = svgRef.getBoundingClientRect().height
+  const svgWidth = svgRef.getBoundingClientRect().width
 
 
   const costArr = data[0].datum;
