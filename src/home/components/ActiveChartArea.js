@@ -47,9 +47,9 @@ const LineChartToolTipDiv = Styled.div`
 
 
 
-const countRevenue = (costArr, incomeArr) => {
+const countIncome = (costArr, revenueArr) => {
 
-  return incomeArr.map((d,i)=> {
+  return revenueArr.map((d,i)=> {
 
     const newValue = d.value - costArr[i].value
 
@@ -120,10 +120,10 @@ const drawInitLineChart = (svgRef, data, tooltipRef) => {
 
 
   const costArr = data[0].datum;
-  const incomeArr = data[1].datum;
+  const revenueArr = data[1].datum;
 
 
-  const revenueArr = countRevenue(costArr,incomeArr);
+  const incomeArr = countIncome(costArr,revenueArr);
 
   const parseTime = timeParse('%Y-%m-%d');
 
@@ -132,7 +132,7 @@ const drawInitLineChart = (svgRef, data, tooltipRef) => {
 
  
   const filterDataArrFunc = getTheCorrespondingValueOfTheDataArrayByThisDateString(
-    costArr, incomeArr, revenueArr)
+    costArr, revenueArr, incomeArr)
   
 
   const drawLinesByData = (data, lineFunc, color, line_GWrapper) => {
@@ -212,9 +212,9 @@ const drawInitLineChart = (svgRef, data, tooltipRef) => {
     ).html(
       `
       <div>${currDateString}</div>
-      <div style="color:green;">income: ${dataArrSizeThree[1].value}</div>
+      <div style="color:steelblue;">revenue: ${dataArrSizeThree[1].value}</div>
       <div style="color:red;">cost: ${dataArrSizeThree[0].value}</div>
-      <div style="color:steelblue;">revenue: ${dataArrSizeThree[2].value}</div>
+      <div style="color:green;">income: ${dataArrSizeThree[2].value}</div>
       `
     )
   }
@@ -355,7 +355,7 @@ class ActiveChartArea extends Component{
       ],
     },
     {
-      dataName:'income',
+      dataName:'revenue',
       datum:[
         {
           date:'2018-06-01',
