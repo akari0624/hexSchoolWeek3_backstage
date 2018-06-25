@@ -8,6 +8,7 @@ import 'antd/lib/date-picker/style'
 import { Menu, Dropdown, Icon, message } from 'antd';
 import 'antd/lib/dropdown/style'
 import 'antd/lib/message/style'
+import locale from 'antd/lib/date-picker/locale/zh_TW'
 
 
 
@@ -24,11 +25,18 @@ const PageTitle = Styled.div`
   font-size:24px;
 `
 
+const DateAndDropdownWrapper = Styled.div`
+  clear:both;
+`
+
 const DateFilterWrapper = Styled.div`
+  float:left;
+  margin-right:30px;
 
 `
 
 const DropdownMenuWrapper = Styled.div`
+  float:left;
 `
 
 const dateFormat = 'YYYY/MM/DD';
@@ -56,15 +64,19 @@ const PageTitleBarWithDateFilterDropDown = props => (
 
   <Wrapper>
     <PageTitle> OVERVIEW </PageTitle>
-    <DateFilterWrapper> <RangePicker defaultValue={[moment('2018/06/01', dateFormat), moment('2018/06/15', dateFormat)]}
-      format={dateFormat}/> </DateFilterWrapper>
-    <DropdownMenuWrapper>
-      <Dropdown overlay={menu}>
-        <a className="ant-dropdown-link" href="#">
-          產生條件 <Icon type="down" />
-        </a>
-      </Dropdown>  
-    </DropdownMenuWrapper>  
+    <DateAndDropdownWrapper>
+      <DateFilterWrapper> 
+        <RangePicker locale={locale}  defaultValue={[moment('2018/06/01', dateFormat), moment('2018/06/15', dateFormat)]}
+          format={dateFormat}/> 
+      </DateFilterWrapper>
+      <DropdownMenuWrapper>
+        <Dropdown overlay={menu}>
+          <a className="ant-dropdown-link" href="#">
+            產生條件 <Icon type="down" />
+          </a>
+        </Dropdown>  
+      </DropdownMenuWrapper>  
+    </DateAndDropdownWrapper>
   </Wrapper>
 
 

@@ -27,15 +27,23 @@ const transitionWebsiteData = [
   {
     name:'FACEBOOK',
     className:'fa-facebook fab fa-3x',
+    viewTimes:50125,
+    lastPeriodViews:46908,
   },{
     name:'Google',
     className:'fa-google fab fa-3x',
+    viewTimes:74337,
+    lastPeriodViews:56908,
   },{
     name:'Wordpress',
     className:'fa-wordpress fab fa-3x',
+    viewTimes:30184,
+    lastPeriodViews:46908,
   },{
     name:'medium',
     className:'fa-medium fab fa-3x',
+    viewTimes:40058,
+    lastPeriodViews:46908,
   }
 
 ]

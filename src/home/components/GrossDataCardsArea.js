@@ -19,19 +19,19 @@ const Wrapper = Styled.section `
 const data = [{
   kind:'TOTAL REVENUE',
   className:'fas fa-hand-holding-usd',
-  numStr:'54,540',
-  color:'#7ED321',
+  numStr:'72,540',
+  color: '#4A90E2',
 },
 {
   kind:'TOTAL COST',
   className:'fas fa-boxes',
-  numStr:'54,540',
-  color:'#7ED321',
+  numStr:'32,540',
+  color: '#D0021B',
 },
 {
   kind:'NET INCOME',
   className:'fas fa-money-bill',
-  numStr:'54,540',
+  numStr:'40,000',
   color:'#7ED321',
 }]
 
